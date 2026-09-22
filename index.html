@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasmine · AI 产品设计作品集 2026</title>
+<meta name="description" content="Jasmine — 2026 届，AI 产品 / Agent 设计方向。AI 负责可能性，我负责选择。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A1A14'/%3E%3Cpath d='M6 10.5 10.5 22 16 13.5 21.5 22 26 10.5' fill='none' stroke='%23FFC857' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0A1A14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jasmine · AI 产品设计作品集 2026">
+<meta property="og:description" content="AI 负责可能性，我负责选择。2026 届 · 产品设计（电子信息方向），开放 AI 产品 / Agent 设计方向实习。">
+<meta property="og:image" content="assets/img/hero-field.jpg">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .bento__cover--blur img{ filter:blur(38px) saturate(1.15) brightness(.52); transform:scale(1.18); }
+</style>
+<noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top">
+      <span>Jasmine</span><i class="nav__dot"></i><span class="nav__tag">AI Product Design</span>
+    </a>
+    <nav class="nav__links">
+      <a class="nav__link" href="#about">关于我</a>
+      <a class="nav__link" href="#work">项目作品</a>
+      <a class="nav__link" href="#cases">案例详解</a>
+      <a class="nav__link" href="#photo">摄影与绘画</a>
+    </nav>
+    <div class="nav__acts">
+      <a class="pill" href="#work">作品集</a>
+      <a class="pill pill--solid" href="#contact">联系我</a>
+      <button class="nav__burger" aria-label="菜单"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero__stage">
+    <!-- 静态底层：WebGL 不可用时它就是全部 -->
+    <img class="hero__base" src="assets/img/hero-field.jpg" alt="草原上停着的一架废弃运输机">
+    <canvas class="hero__canvas" id="revealCanvas"></canvas>
+    <div class="hero__tint"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__grade"></div>
+  </div>
+
+  <div class="hero__body" id="top">
+    <div class="hero__inner">
+      <div class="hero__eyebrow">AI Product &amp; Agent Design · Portfolio 2026</div>
+      <h1 class="hero__name">Jasmine</h1>
+      <p class="hero__claim">AI 不是我最后一步的画笔，<br>而是贯穿我设计流程每一段的合作者。</p>
+      <p class="hero__meta">2026 届 · 现居广州 · 开放 AI 产品 / Agent 设计方向实习</p>
+      <div class="hero__btns">
+        <a class="btn btn--solid" href="assets/resume/wangnanhui-resume-ai-pm-2026.pdf" download>下载简历</a>
+        <a class="btn btn--ghost" href="#work">看作品集</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <div class="wrap">
+      <!-- 音乐坞 · Shader Card -->
+      <div class="dock" id="dock">
+        <div class="dock__shader"><canvas></canvas></div>
+        <div class="dock__glow"></div>
+        <div class="dock__ui">
+          <div class="dock__bar">
+            <button class="dock__play" aria-label="播放">
+              <svg viewBox="0 0 14 14"><path d="M2 1.4 12.6 7 2 12.6z"/></svg>
+            </button>
+            <div class="dock__info">
+              <div class="dock__row">
+                <span class="dock__title">Head In The Clouds</span>
+                <span class="dock__artist">汉堡宝不许哭</span>
+              </div>
+              <div class="dock__bar-track"><div class="dock__bar-fill"></div></div>
+            </div>
+            <div class="dock__eq"><i></i><i></i><i></i><i></i></div>
+            <button class="dock__toggle" aria-label="展开">
+              <svg viewBox="0 0 12 12"><path d="M2 4.2 6 8 10 4.2"/></svg>
+            </button>
+          </div>
+          <div class="dock__panel">
+            <div>
+              <div class="dock__panel-in">
+                <div class="wave">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="dock__vol">
+                  <svg viewBox="0 0 14 14"><path d="M2 5h2.6L8 2.4v9.2L4.6 9H2z"/><path d="M10.4 4.6a3.6 3.6 0 0 1 0 4.8"/></svg>
+                  <div class="dock__vol-track"><div class="dock__vol-fill"></div></div>
+                  <span class="dock__vol-num">60</span>
+                </div>
+                <div class="dock__div"></div>
+                <div class="dock__plist">
+                  <div class="dock__track cur" data-i="0"><b>Head In The Clouds</b><time>3:04</time></div>
+                </div>
+                <!-- 音频放在 assets/audio/，曲目表见 site.js 的 TRACKS -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <audio id="dockAudio" preload="none" src="assets/audio/head-in-the-clouds.mp3"></audio>
+      </div>
+
+      <div class="scrollcue"><span>SCROLL</span><i></i></div>
+      <div class="hint-drag"><b>移动鼠标</b> · 推开覆盖在画面上的墨层</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 关于我 ===================== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about__row">
+      <div class="about__body rv">
+        <div class="eyebrow">About / 关于我</div>
+        <h2 class="h2">当造物不再稀缺，<br>判断力就是稀缺品</h2>
+        <p style="margin-top:26px">广东工业大学产品设计（电子信息方向），2026 届。</p>
+        <p>工业设计给我的第一课不是画得好看，而是顺序：先想清楚结构、人机尺寸和工程可行性，再落笔。多年过去，顺序没变，只是手里的工具一直在换。</p>
+        <p>那些关于未来的影像，曾经反复向我抛出同一个问题——当技术把「造物」的门槛压到接近于零，设计还剩下什么。我的答案是判断：形态可以被生成，方向必须有人认领。于是我把 AI 放进了自己的工作方式里，不是追赶潮流，而是回答那个问题。</p>
+        <p>设计之外，我在拍照，也在画画。镜头和画笔练的其实是同一件事：看见。光线、结构、情绪——都要求你在瞬间做出判断。</p>
+        <blockquote class="about__q">
+          <p>AI 负责可能性，我负责选择。</p>
+        </blockquote>
+        <dl class="about__facts">
+          <div class="about__fact"><dt>Education</dt><dd>广东工业大学 · 产品设计（电子信息方向）</dd></div>
+          <div class="about__fact"><dt>Direction</dt><dd>AI 产品经理 / Agent 设计</dd></div>
+          <div class="about__fact"><dt>Base</dt><dd>广州 · 每周可到岗 5 天</dd></div>
+          <div class="about__fact"><dt>Tools</dt><dd>Figma · Rhino · Blender · Midjourney / SD · Vizcom</dd></div>
+        </dl>
+      </div>
+      <figure class="about__photo rv">
+        <img src="assets/img/portrait.jpg" alt="Jasmine 肖像">
+        <figcaption>Jasmine · 2026</figcaption>
+      </figure>
+    </div>
+
+    <div class="timeline rv">
+      <div class="tl"><div class="tl__yr">2023</div><div class="tl__t">入读产品设计</div><p class="tl__d">广东工业大学 · 产品设计（电子信息方向）。打结构、人机工学、工程可行性的底子。</p></div>
+      <div class="tl"><div class="tl__yr">2025</div><div class="tl__t">东航客运大飞机座椅</div><p class="tl__d">校企合作项目，担任组长。与航空公司合作做乘客与出行场景需求分析。</p></div>
+      <div class="tl"><div class="tl__yr">2026 上半年</div><div class="tl__t">Emotion Sandbox</div><p class="tl__d">东风日产校企项目，产品经理（统筹）5 人跨职能团队。AI 开始进流程。</p></div>
+      <div class="tl"><div class="tl__yr">2026 下半年</div><div class="tl__t">AI 审计</div><p class="tl__d">产品经理。医院审计场景，定义 Agent 工作流编排，完成真实用户试用。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 项目作品 ===================== -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">SELECTED WORK / 项目作品</div>
+      <h2 class="h2">五个项目，一条从用户需求走到可运行界面的线</h2>
+      <p class="lead">五个项目里 AI 参与的深度不一样 —— 有的从概念搭建就进来了，有的只承担渲染。每张卡片都写清「AI 用在哪几环」；业务问题、我的角色与完整推演，在各自的详情页里。</p>
+      <div class="hintbar"><i></i><span>点任意卡片右下角的「查看详情」→ 打开该项目的独立详情页（/work/01-audit … 05），可单独分享链接</span></div>
+    </div>
+
+    <div class="bento">
+      <!-- 01 宽卡 -->
+      <a class="bento__wide rv" href="work/01-audit.html">
+        <div class="bento__cover bento__cover--blur"><img src="assets/img/cover-01.jpg" alt="AI 审计产品界面"></div>
+        <div class="bento__ov"></div>
+        <div class="bento__shot"><img src="assets/img/cover-01.jpg" alt="审计界面"></div>
+        <div class="bento__body">
+          <div class="bento__row"><span class="bento__claim">01 / DESIGNED FOR TRUST</span><span class="bento__depth">唯一完整 0 → 1 闭环</span></div>
+          <h3 class="bento__title">AI 审计</h3>
+          <p class="bento__meta">产品经理 · 2026.06 – 2026.09 · 医院审计场景 · 已完成真实用户试用</p>
+          <p class="bento__desc">定义审计 Agent 的工作流编排：问题输入 → 概念分析 → 知识库检索 → 报告生成 → 制度审查 → 对比分析 → 输出。AI 承担检索与生成，人保留确认与签发。</p>
+        </div>
+        <span class="bento__go">查看详情 →</span>
+      </a>
+
+      <!-- 02 -->
+      <a class="bento__sm rv" href="work/02-cockpit.html">
+        <div class="bento__cover"><img src="assets/img/cover-02.jpg" alt="智能座舱外观渲染"></div>
+        <div class="bento__ov"></div>
+        <div class="bento__body">
+          <div class="bento__row"><span class="bento__claim">02 / BUILT FOR THE FUTURE</span></div>
+          <h3 class="bento__title">智能座舱 · 情绪沙盘</h3>
+          <p class="bento__meta">产品经理（统筹） · 2026.01 – 2026.03 · 5 人跨职能团队 · 东风日产校企合作项目</p>
+          <p class="bento__desc">AI 参与 · 最深</p>
+        </div>
+        <span class="bento__go">查看详情 →</span>
+      </a>
+
+      <!-- 03 -->
+      <a class="bento__sm rv" href="work/03-seat.html">
+        <div class="bento__cover"><img src="assets/img/cover-03.jpg" alt="东航客运大飞机座椅"></div>
+        <div class="bento__ov"></div>
+        <div class="bento__body">
+          <div class="bento__row"><span class="bento__claim">03 / DESIGNED FOR DIVERSITY</span></div>
+          <h3 class="bento__title">东航客运大飞机座椅</h3>
+          <p class="bento__meta">组长 · 2025.03 – 2025.07 · 大型交通工具设计与制造实验室</p>
+          <p class="bento__desc">AI 参与 · 中等</p>
+        </div>
+        <span class="bento__go">查看详情 →</span>
+      </a>
+
+      <!-- 04 -->
+      <a class="bento__sm rv" href="work/04-separator.html">
+        <div class="bento__cover"><img src="assets/img/cover-04.jpg" alt="智能水油分离器"></div>
+        <div class="bento__ov"></div>
+        <div class="bento__body">
+          <div class="bento__row"><span class="bento__claim">04 / DESIGNED FOR EVERY DROP</span></div>
+          <h3 class="bento__title">智能水油分离器</h3>
+          <p class="bento__meta">产品设计及产品经理 · 2026.04 – 2026.05 · 校企合作项目</p>
+          <p class="bento__desc">AI 参与 · 概念阶段</p>
+        </div>
+        <span class="bento__go">查看详情 →</span>
+      </a>
+
+      <!-- 05 -->
+      <a class="bento__sm rv" href="work/05-culture.html">
+        <div class="bento__cover"><img src="assets/img/cover-05.jpg" alt="文化静心载体"></div>
+        <div class="bento__ov"></div>
+        <div class="bento__body">
+          <div class="bento__row"><span class="bento__claim">05 / DESIGNED FOR INNER PEACE</span></div>
+          <h3 class="bento__title">文化静心载体</h3>
+          <p class="bento__meta">产品设计 · 独立项目 · 名称与周期待确认</p>
+          <p class="bento__desc">AI 参与 · 呈现环节</p>
+        </div>
+        <span class="bento__go">查看详情 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 案例详解 ===================== -->
+<section class="section section--tight" id="cases">
+  <div class="wrap rv">
+    <div class="eyebrow">CASE NOTES / 案例详解</div>
+    <h2 class="h2">点进去，看每一步是怎么选的</h2>
+    <p class="lead">五个案例的完整推演，都在各自的详情页里。这里每块只留一屏 —— 项目主视觉、业务问题、我的角色、结果，以及开头的答题句。想看「为什么这么选」，点「查看详情 →」。</p>
+  </div>
+
+  <!-- Case 01 -->
+  <article class="case" id="case-01">
+    <div class="wrap">
+      <header class="case__band rv">
+        <div class="case__no">PROJECT 01</div>
+        <div class="case__claims">
+          <div class="case__en">DESIGNED FOR TRUST</div>
+          <div class="case__cn">AI 审计</div>
+        </div>
+      </header>
+      <div class="case__row rv">
+        <div class="case__media"><img src="assets/img/cover-01.jpg" alt="AI 审计产品界面"></div>
+        <div class="case__sum">
+          <div>
+            <div class="case__meta">产品经理 · 2026.06 – 2026.09 · 医院审计场景</div>
+            <dl class="case__facts">
+              <div class="case__fact"><dt>问题</dt><dd>多角色协作、权限边界不清、任务流转不透明；审计人员不知道 Agent 走到了哪一步，也不敢直接信它给出的结论。</dd></div>
+              <div class="case__fact"><dt>我的角色</dt><dd>产品经理。梳理审计人员的职责与工作流程，设计多端产品架构与核心业务流程，定义 Agent 工作流编排，完成 Figma 高保真交互原型。</dd></div>
+              <div class="case__fact"><dt>结果</dt><dd>面向医院审计工作人员完成真实试用，按反馈持续优化任务流转与 AI 交互，产出内部可运行的产品 Demo。</dd></div>
+            </dl>
+          </div>
+          <a class="case__go" href="work/01-audit.html">查看详情 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 02 -->
+  <article class="case" id="case-02">
+    <div class="wrap">
+      <header class="case__band rv">
+        <div class="case__no">PROJECT 02</div>
+        <div class="case__claims">
+          <div class="case__en">BUILT FOR THE FUTURE</div>
+          <div class="case__cn">智能座舱 · 情绪沙盘</div>
+        </div>
+      </header>
+      <div class="case__row rv">
+        <div class="case__media"><img src="assets/img/cover-02.jpg" alt="智能座舱渲染"></div>
+        <div class="case__sum">
+          <div>
+            <div class="case__meta">产品经理（统筹） · 2026.01 – 2026.03 · 5 人跨职能团队 · 东风日产校企项目</div>
+            <dl class="case__facts">
+              <div class="case__fact"><dt>问题</dt><dd>座舱体验高度同质化，客户希望用「情绪」而不是「功能」重新组织人与车的关系。</dd></div>
+              <div class="case__fact"><dt>我的角色</dt><dd>产品经理（统筹）。主导情绪沙盘 AI 触觉反馈交互平台的创意搭建与方案推进，统筹 5 人跨职能团队。</dd></div>
+              <div class="case__fact"><dt>结果</dt><dd>输出完整的交互概念、产品渲染图与提案视频。</dd></div>
+            </dl>
+          </div>
+          <a class="case__go" href="work/02-cockpit.html">查看详情 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 03 -->
+  <article class="case" id="case-03">
+    <div class="wrap">
+      <header class="case__band rv">
+        <div class="case__no">PROJECT 03</div>
+        <div class="case__claims">
+          <div class="case__en">DESIGNED FOR DIVERSITY</div>
+          <div class="case__cn">东航客运大飞机座椅</div>
+        </div>
+      </header>
+      <div class="case__row rv">
+        <div class="case__media"><img src="assets/img/cover-03.jpg" alt="飞机座椅渲染"></div>
+        <div class="case__sum">
+          <div>
+            <div class="case__meta">组长 · 2025.03 – 2025.07 · 校企合作项目 · 与航空公司合作</div>
+            <dl class="case__facts">
+              <div class="case__fact"><dt>问题</dt><dd>与航空公司合作开展乘客与出行场景需求分析，需要覆盖多种体型的乘客与多类出行场景。</dd></div>
+              <div class="case__fact"><dt>我的角色</dt><dd>组长。明确产品功能定义与方案方向，统筹多类场景方案推进，并独立完成项目成果视频的剪辑与制作。</dd></div>
+              <div class="case__fact"><dt>结果</dt><dd>输出多套场景方案与项目成果视频。</dd></div>
+            </dl>
+          </div>
+          <a class="case__go" href="work/03-seat.html">查看详情 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 04 -->
+  <article class="case" id="case-04">
+    <div class="wrap">
+      <header class="case__band rv">
+        <div class="case__no">PROJECT 04</div>
+        <div class="case__claims">
+          <div class="case__en">DESIGNED FOR EVERY DROP</div>
+          <div class="case__cn">智能水油分离器</div>
+        </div>
+      </header>
+      <div class="case__row rv">
+        <div class="case__media"><img src="assets/img/cover-04.jpg" alt="智能水油分离器渲染"></div>
+        <div class="case__sum">
+          <div>
+            <div class="case__meta">产品设计及产品经理 · 2026.04 – 2026.05 · 校企合作项目</div>
+            <dl class="case__facts">
+              <div class="case__fact"><dt>问题</dt><dd>同类产品在市场上高度同质化，功能与形态都缺少区分度。</dd></div>
+              <div class="case__fact"><dt>我的角色</dt><dd>产品设计及产品经理。负责从市场调研、需求分析、概念定义到方案验证的完整流程。</dd></div>
+              <div class="case__fact"><dt>结果</dt><dd>针对同质化问题提出差异化机会点，最终获得企业创新奖项。</dd></div>
+            </dl>
+          </div>
+          <a class="case__go" href="work/04-separator.html">查看详情 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 05 -->
+  <article class="case" id="case-05">
+    <div class="wrap">
+      <header class="case__band rv">
+        <div class="case__no">PROJECT 05</div>
+        <div class="case__claims">
+          <div class="case__en">DESIGNED FOR INNER PEACE</div>
+          <div class="case__cn">文化静心载体</div>
+        </div>
+      </header>
+      <div class="case__row rv">
+        <div class="case__media"><img src="assets/img/cover-05.jpg" alt="文化静心载体造型"></div>
+        <div class="case__sum">
+          <div>
+            <div class="case__meta">产品设计 · 独立项目</div>
+            <dl class="case__facts">
+              <div class="case__fact"><dt>问题</dt><dd>现代人缺少一个让注意力落回自身的仪式化载体。</dd></div>
+              <div class="case__fact"><dt>我的角色</dt><dd>独立完成概念、造型与呈现。</dd></div>
+              <div class="case__fact"><dt>结果</dt><dd>以「衣」字的造型语言承载使用与收纳。</dd></div>
+            </dl>
+          </div>
+          <a class="case__go" href="work/05-culture.html">查看详情 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ===================== 摄影与绘画 ===================== -->
+<section class="photo" id="photo">
+  <div class="photo__head">
+    <div class="wrap rv">
+      <div class="eyebrow" style="color:var(--gold)">PHOTOGRAPHY &amp; PAINTING / 摄影与绘画</div>
+      <h2 class="h2">镜头和画笔练的是同一件事 —— 看见</h2>
+      <p class="lead">光线、结构、情绪，都要求在瞬间做出判断。这里放的只是其中一部分。</p>
+    </div>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel__track">
+      <div class="plane" data-i="0"><img class="plane__img" src="assets/img/plane-01.jpg" alt="落羽杉"><div class="plane__cap">01　落羽杉 · 摄影</div></div>
+      <div class="plane" data-i="1"><img class="plane__img" src="assets/img/plane-02.jpg" alt="木雕造像"><div class="plane__cap">02　木雕造像 · 摄影</div></div>
+      <div class="plane" data-i="2"><img class="plane__img" src="assets/img/plane-03.jpg" alt="灯笼"><div class="plane__cap">03　灯笼 · 摄影</div></div>
+      <div class="plane" data-i="3"><img class="plane__img" src="assets/img/plane-04.jpg" alt="夜色城市"><div class="plane__cap">04　夜色城市 · 摄影</div></div>
+      <div class="plane" data-i="4"><img class="plane__img" src="assets/img/plane-05.jpg" alt="花园雕塑"><div class="plane__cap">05　花园雕塑 · 绘画</div></div>
+      <div class="plane" data-i="5"><img class="plane__img" src="assets/img/plane-06.jpg" alt="白衣背影"><div class="plane__cap">06　白衣背影 · 绘画</div></div>
+      <div class="plane" data-i="6"><img class="plane__img" src="assets/img/plane-07.jpg" alt="雪地"><div class="plane__cap">07　雪地 · 摄影</div></div>
+      <div class="plane" data-i="7"><img class="plane__img" src="assets/img/plane-08.jpg" alt="长椅读书"><div class="plane__cap">08　长椅读书 · 摄影</div></div>
+      <div class="plane" data-i="8"><img class="plane__img" src="assets/img/plane-09.jpg" alt="烟囱与蒸汽"><div class="plane__cap">09　烟囱与蒸汽 · 摄影</div></div>
+      <div class="plane" data-i="9"><img class="plane__img" src="assets/img/plane-10.jpg" alt="灰狗"><div class="plane__cap">10　灰狗 · 绘画（临摹，原作 REYKAT）</div></div>
+      <div class="plane" data-i="10"><img class="plane__img" src="assets/img/plane-11.jpg" alt="猫"><div class="plane__cap">11　猫 · 绘画</div></div>
+    </div>
+    <div class="carousel__fade carousel__fade--l"></div>
+    <div class="carousel__fade carousel__fade--r"></div>
+    <div class="carousel__rail"><div class="carousel__fill"></div></div>
+  </div>
+
+  <div class="photo__foot">
+    <div class="wrap">
+      <div class="photo__row">
+        <span>拖动或横向滚轮浏览 · 共 11 张 · 点击放大</span>
+        <span>摄影 07 张 · 绘画 04 张</span>
+      </div>
+      <p class="footnote">绘画作品除标注外均为自绘；《灰狗》为临摹，原作 REYKAT。</p>
+      <!-- 实现记录（不对外显示）：视差轮播 · 画片 360×480 · gap 32 · radius 16 · 竖向视差 0.40 · uvScale 0.85 · lerp 0.08 · wheelSensitivity 1.0 · dragSensitivity 1.4 · pauseOnHover · showProgress -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 联系 ===================== -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">GET IN TOUCH / 联系</div>
+      <h2 class="h2">想聊得更细，或者想看某个项目的完整过程</h2>
+      <p class="lead">邮件、微信，或者右边直接留言 —— 三条路都通。</p>
+    </div>
+
+    <div class="contact__row rv">
+      <div class="contact__list">
+        <div class="contact__item">
+          <div class="contact__label">Email / 邮箱</div>
+          <div class="contact__val"><a href="mailto:slww1314159@outlook.com">slww1314159@outlook.com</a></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__label">Wechat / 微信</div>
+          <div class="contact__val"><a href="#contact" data-copy="sl86597013" title="点击复制微信号">sl86597013</a></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__label">City / 城市</div>
+          <div class="contact__val">广州 · 每周可到岗 5 天</div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__label">Open To / 目标</div>
+          <div class="contact__val">AI 产品经理 · Agent 设计 · 广州 / 杭州 / 上海 / 南京</div>
+        </div>
+      </div>
+
+      <div class="contact__card glass">
+        <h3>留个言</h3>
+        <p>留下邮箱和你想问的，我会尽快回。想直接约时间聊也可以写在这。</p>
+        <form class="contact__form" id="contactForm">
+          <div class="field"><label for="c1">怎么称呼</label><input id="c1" type="text" placeholder="你的名字 / 公司" required></div>
+          <div class="field"><label for="c2">邮箱</label><input id="c2" type="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="c3">想说什么</label><textarea id="c3" placeholder="想看哪个项目的完整过程？或者想聊什么方向？"></textarea></div>
+          <button class="btn btn--solid" type="submit">发送</button>
+          <p class="contact__ok" id="contactOk"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 页脚 ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <h3>Jasmine</h3>
+        <p class="footer__slogan">当造物不再稀缺，判断力就是稀缺品</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>导航</h4>
+          <ul>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#work">项目作品</a></li>
+            <li><a href="#cases">案例详解</a></li>
+            <li><a href="#photo">摄影与绘画</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>项目</h4>
+          <ul>
+            <li><a href="work/01-audit.html">AI 审计</a></li>
+            <li><a href="work/02-cockpit.html">智能座舱 · 情绪沙盘</a></li>
+            <li><a href="work/03-seat.html">东航客运大飞机座椅</a></li>
+            <li><a href="work/04-separator.html">智能水油分离器</a></li>
+            <li><a href="work/05-culture.html">文化静心载体</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__div"></div>
+    <div class="footer__bot">
+      <span>2026 Jasmine · 本网站内容与图像版权归本人所有</span>
+      <span>2026 届 · 现居广州 · 开放 AI 产品 / Agent 设计方向实习机会</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__x" aria-label="关闭">✕</button>
+  <div>
+    <img id="lightboxImg" alt="">
+    <div class="lightbox__cap" id="lightboxCap"></div>
+  </div>
+</div>
+
+<script src="assets/js/shader-card.js"></script>
+<script src="assets/js/fluid-reveal.js"></script>
+<script src="assets/js/scroll-mask.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
