@@ -583,6 +583,54 @@ ul{ margin:0; padding:0; list-style:none; }
   .phil__card{ backdrop-filter:none; -webkit-backdrop-filter:none; background:rgba(255,255,255,.05); }
 }
 
+/* ---------- 15c. 详情页 · 项目视频（页面底部） ---------- */
+.film{ padding:104px var(--pad) 116px; }
+.film__card{
+  border-radius:var(--r-card); padding:22px; overflow:hidden;
+}
+.film__head{
+  display:flex; align-items:baseline; justify-content:space-between; gap:20px;
+  padding:4px 8px 20px;
+}
+.film__head h3{ font-size:16px; font-weight:600; }
+.film__head span{ font-size:11px; letter-spacing:.19em; text-transform:uppercase; color:var(--ink-38); font-weight:600; }
+.film__frame{ position:relative; border-radius:var(--r-sm); overflow:hidden; background:#000; }
+.film__frame video{
+  display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;
+  background:#000;
+}
+.film__badge{
+  position:absolute; top:16px; left:16px; z-index:2;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 13px; border-radius:99px;
+  font-size:11px; letter-spacing:.06em;
+  background:rgba(10,26,20,.55);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.18);
+  color:var(--ink-90); font-weight:600; pointer-events:none;
+  transition:opacity var(--dur-base) var(--ease);
+}
+.film__badge i{ width:6px; height:6px; border-radius:99px; background:var(--gold); font-style:normal; }
+.film__frame.is-playing .film__badge{ opacity:0; }
+.film__cap{
+  display:flex; align-items:baseline; justify-content:space-between; gap:20px;
+  padding:18px 8px 2px; font-size:13px; color:var(--ink-55);
+}
+.film__cap b{ color:var(--ink-90); font-weight:600; }
+.film__fallback{ padding:14px 8px 0; font-size:12.5px; line-height:1.7; color:var(--ink-38); }
+.film__fallback a{ color:var(--gold); text-decoration:underline; text-underline-offset:3px; }
+@media (max-width:1200px){
+  .film{ padding:92px var(--pad) 104px; }
+}
+@media (max-width:980px){
+  .film{ padding:76px var(--pad) 88px; }
+  .film__card{ padding:14px; }
+  .film__badge{ top:10px; left:10px; padding:5px 10px; font-size:10px; }
+}
+@media (max-width:768px){
+  .film__card{ backdrop-filter:none; -webkit-backdrop-filter:none; background:rgba(255,255,255,.05); }
+}
+
 /* ---------- 16. 响应式 ---------- */
 @media (max-width:1200px){
   :root{ --pad:56px; }

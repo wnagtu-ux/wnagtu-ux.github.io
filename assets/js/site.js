@@ -383,9 +383,40 @@
     });
   }
 
+  /* ---------------- 项目视频（详情页底部） ---------------- */
+  function film() {
+    var frames = $$('.film__frame');
+    if (!frames.length) return;
+    frames.forEach(function (frame) {
+      var v = frame.querySelector('video');
+      if (!v) return;
+      v.addEventListener('play', function () {
+        frame.classList.add('is-playing');
+        // 同一页同时只播一支
+        frames.forEach(function (other) {
+          var ov = other.querySelector('video');
+          if (ov && ov !== v && !ov.paused) ov.pause();
+        });
+      });
+      v.addEventListener('pause', function () { frame.classList.remove('is-playing'); });
+      v.addEventListener('ended', function () { frame.classList.remove('is-playing'); });
+      v.addEventListener('error', function () {
+        if (frame.querySelector('.film__fallback')) return;
+        var p = document.createElement('p');
+        p.className = 'film__fallback';
+        p.textContent = '视频加载失败，可直接下载查看：';
+        var a = document.createElement('a');
+        a.href = v.currentSrc || (v.querySelector('source') ? v.querySelector('source').src : '#');
+        a.textContent = '下载视频';
+        p.appendChild(a);
+        frame.parentNode.appendChild(p);
+      });
+    });
+  }
+
   /* ---------------- 启动 ---------------- */
   function boot() {
-    nav(); reveal(); anchors(); dock(); carousel(); hero(); contact();
+    nav(); reveal(); anchors(); dock(); carousel(); hero(); contact(); film();
     if (window.ScrollMask) window.ScrollMask.mountAll(document);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
