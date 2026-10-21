@@ -681,3 +681,119 @@ ul{ margin:0; padding:0; list-style:none; }
   .rv{ opacity:1; transform:none; }
   .hero__canvas{ display:none; }
 }
+
+/* ---------- 18. 指针引力 · Custom Cursor ---------- */
+/* 行为取自 ohmiler/opus-5.5 "Cursor Black Hole"，配色改写为本站绿金系统。
+   前缀用 cfx，避开音乐坞播放列表已有的 .cur。 */
+.cfx{ display:none; }
+
+@media (hover:hover) and (pointer:fine){
+  html.has-cursor,
+  html.has-cursor *{ cursor:none !important; }
+  html.has-cursor input,
+  html.has-cursor textarea,
+  html.has-cursor select{ cursor:auto !important; }
+
+  .cfx{
+    display:block;
+    position:fixed; left:0; top:0; z-index:9999;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity var(--dur-fast) var(--ease);
+  }
+  .cfx.is-on{ opacity:1; }
+
+  .cfx__ring,
+  .cfx__dot,
+  .cfx__shock{
+    position:absolute; left:0; top:0;
+    will-change:transform;
+  }
+
+  /* 外环：滞后跟随。尺寸变化只在状态切换时发生，不参与每帧计算 */
+  .cfx__ring{
+    width:32px; height:32px; margin:-16px 0 0 -16px;
+    transition:width var(--dur-fast) var(--ease),
+               height var(--dur-fast) var(--ease),
+               margin var(--dur-fast) var(--ease);
+  }
+  .cfx__ring svg{ display:block; width:100%; height:100%; overflow:visible; }
+
+  /* 暗底描边：压在白色产品图上时，白色细环不会消失 */
+  .cfx__halo{
+    fill:none;
+    stroke:rgba(0,0,0,.42);
+    stroke-width:2.6;
+    transition:stroke var(--dur-fast) var(--ease);
+  }
+  .cfx__track{
+    fill:rgba(255,200,87,0);
+    stroke:rgba(255,255,255,.42);
+    stroke-width:1.2;
+    transition:fill var(--dur-base) var(--ease),
+               stroke var(--dur-fast) var(--ease);
+  }
+  .cfx__charge{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+    transform:rotate(-90deg);
+    transform-origin:50% 50%;
+    opacity:0;
+    transition:opacity var(--dur-fast) var(--ease);
+  }
+
+  /* 视界：金点 + 一圈暗边，压在浅色图上也不糊 */
+  .cfx__dot{
+    width:4px; height:4px; margin:-2px 0 0 -2px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:
+      0 0 0 1px rgba(10,26,20,.55),
+      0 0 10px rgba(255,200,87,.45);
+  }
+
+  /* 悬停可交互元素：环放大并转金 */
+  .cfx.is-link .cfx__ring{ width:50px; height:50px; margin:-25px 0 0 -25px; }
+  .cfx.is-link .cfx__track{
+    stroke:rgba(255,200,87,.70);
+    fill:rgba(255,200,87,.055);
+  }
+  .cfx.is-link .cfx__dot{
+    background:#fff;
+    box-shadow:
+      0 0 0 1px rgba(255,200,87,.85),
+      0 0 14px rgba(255,200,87,.55);
+  }
+
+  /* 按住：环收小，蓄力弧开始走 */
+  .cfx.is-down .cfx__ring{ width:26px; height:26px; margin:-13px 0 0 -13px; }
+  .cfx.is-down .cfx__charge{ opacity:1; }
+
+  /* 可拖拽的画廊：中性态，不抢链接的金色语义 */
+  .cfx.is-drag .cfx__ring{ width:40px; height:40px; margin:-20px 0 0 -20px; }
+  .cfx.is-drag .cfx__track{ stroke:rgba(255,255,255,.62); }
+
+  /* 松手：一圈金色冲击波 */
+  .cfx__shock{
+    width:32px; height:32px; margin:-16px 0 0 -16px;
+    border-radius:50%;
+    border:1px solid rgba(255,200,87,.75);
+    opacity:0;
+  }
+  .cfx__shock.is-on{ animation:cfxShock var(--dur-cinema) var(--ease) forwards; }
+
+  @keyframes cfxShock{
+    from{ opacity:.80; transform:scale(.42); }
+    to  { opacity:0;   transform:scale(2.5); border-width:.4px; }
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cfx{ display:none !important; }
+  html.has-cursor,
+  html.has-cursor *{ cursor:auto !important; }
+}
