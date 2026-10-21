@@ -26,6 +26,7 @@
   .bento__cover--blur img{ filter:blur(38px) saturate(1.15) brightness(.52); transform:scale(1.18); }
 </style>
 <noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
+<style>.personal-zone{scroll-margin-top:90px}#top{scroll-margin-top:0}</style>
 </head>
 <body>
 
@@ -36,9 +37,9 @@
       <span>Jasmine.王南会</span><i class="nav__dot"></i><span class="nav__tag">AI Product Design</span>
     </a>
     <nav class="nav__links">
-      <a class="nav__link" href="#about">关于我</a>
       <a class="nav__link" href="#work">项目作品</a>
       <a class="nav__link" href="#photo">摄影与绘画</a>
+      <a class="nav__link" href="#profile">关于我</a>
     </nav>
     <div class="nav__acts">
       <a class="pill" href="#work">作品集</a>
@@ -48,126 +49,13 @@
   </div>
 </header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="hero">
-  <div class="hero__stage">
-    <!-- 静态底层：WebGL 不可用时它就是全部 -->
-    <img class="hero__base" src="assets/img/hero-field.jpg" alt="草原上停着的一架废弃运输机">
-    <canvas class="hero__canvas" id="revealCanvas"></canvas>
-    <div class="hero__tint"></div>
-    <div class="hero__scrim"></div>
-    <div class="hero__grade"></div>
-  </div>
-
-  <div class="hero__body" id="top">
-    <div class="hero__inner">
-      <div class="hero__eyebrow">AI Product &amp; Agent Design · Portfolio 2027</div>
-      <h1 class="hero__name">Jasmine.王南会</h1>
-      <p class="hero__claim">AI 不是我最后一步的画笔，<br>而是贯穿我设计流程每一段的合作者。</p>
-      <p class="hero__meta">2027 届 · 现居广州 · 开放 AI 产品 / Agent 设计方向实习</p>
-      <div class="hero__btns">
-        <a class="btn btn--solid" href="assets/resume/wangnanhui-resume-ai-pm-2027.pdf" download>下载简历</a>
-        <a class="btn btn--ghost" href="#work">看作品集</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero__foot">
-    <div class="wrap">
-      <!-- 音乐坞 · Shader Card -->
-      <div class="dock" id="dock">
-        <div class="dock__shader"><canvas></canvas></div>
-        <div class="dock__glow"></div>
-        <div class="dock__ui">
-          <div class="dock__bar">
-            <button class="dock__play" aria-label="播放">
-              <svg viewBox="0 0 14 14"><path d="M2 1.4 12.6 7 2 12.6z"/></svg>
-            </button>
-            <div class="dock__info">
-              <div class="dock__row">
-                <span class="dock__title">Head In The Clouds</span>
-                <span class="dock__artist">汉堡宝不许哭</span>
-              </div>
-              <div class="dock__bar-track"><div class="dock__bar-fill"></div></div>
-            </div>
-            <div class="dock__eq"><i></i><i></i><i></i><i></i></div>
-            <button class="dock__toggle" aria-label="展开">
-              <svg viewBox="0 0 12 12"><path d="M2 4.2 6 8 10 4.2"/></svg>
-            </button>
-          </div>
-          <div class="dock__panel">
-            <div>
-              <div class="dock__panel-in">
-                <div class="wave">
-                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-                </div>
-                <div class="dock__vol">
-                  <svg viewBox="0 0 14 14"><path d="M2 5h2.6L8 2.4v9.2L4.6 9H2z"/><path d="M10.4 4.6a3.6 3.6 0 0 1 0 4.8"/></svg>
-                  <div class="dock__vol-track"><div class="dock__vol-fill"></div></div>
-                  <span class="dock__vol-num">60</span>
-                </div>
-                <div class="dock__div"></div>
-                <div class="dock__plist">
-                  <div class="dock__track cur" data-i="0"><b>Head In The Clouds</b><time>3:04</time></div>
-                </div>
-                <!-- 音频放在 assets/audio/，曲目表见 site.js 的 TRACKS -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <audio id="dockAudio" preload="none" src="assets/audio/head-in-the-clouds.mp3"></audio>
-      </div>
-
-      <div class="scrollcue"><span>SCROLL</span><i></i></div>
-      <div class="hint-drag"><b>移动鼠标</b> · 推开覆盖在画面上的墨层</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 关于我 ===================== -->
-<section class="section" id="about">
-  <div class="wrap">
-    <div class="about__row">
-      <div class="about__body rv">
-        <div class="eyebrow">About / 关于我</div>
-        <h2 class="h2">当造物不再稀缺，<br>判断力就是稀缺品</h2>
-        <p style="margin-top:26px">广东工业大学产品设计（电子信息方向），2027 届。</p>
-        <p>工业设计给我的第一课不是画得好看，而是顺序：先想清楚结构、人机尺寸和工程可行性，再落笔。多年过去，顺序没变，只是手里的工具一直在换。</p>
-        <p>那些关于未来的影像，曾经反复向我抛出同一个问题——当技术把「造物」的门槛压到接近于零，设计还剩下什么。我的答案是判断：形态可以被生成，方向必须有人认领。于是我把 AI 放进了自己的工作方式里，不是追赶潮流，而是回答那个问题。</p>
-        <p>设计之外，我在拍照，也在画画。镜头和画笔练的其实是同一件事：看见。光线、结构、情绪——都要求你在瞬间做出判断。</p>
-        <blockquote class="about__q">
-          <p>AI 负责可能性，我负责选择。</p>
-        </blockquote>
-        <dl class="about__facts">
-          <div class="about__fact"><dt>Education</dt><dd>广东工业大学 · 产品设计（电子信息方向）</dd></div>
-          <div class="about__fact"><dt>Direction</dt><dd>AI 产品经理 / Agent 设计</dd></div>
-          <div class="about__fact"><dt>Base</dt><dd>广州 · 每周可到岗 5 天</dd></div>
-          <div class="about__fact"><dt>Tools</dt><dd>Figma · Rhino · Blender · Midjourney / SD · Vizcom</dd></div>
-        </dl>
-      </div>
-      <figure class="about__photo rv">
-        <img src="assets/img/portrait.jpg" alt="Jasmine.王南会 肖像">
-        <figcaption>Jasmine.王南会 · 2026</figcaption>
-      </figure>
-    </div>
-
-    <div class="timeline rv">
-      <div class="tl"><div class="tl__yr">2023</div><div class="tl__t">入读产品设计</div><p class="tl__d">广东工业大学 · 产品设计（电子信息方向）。打结构、人机工学、工程可行性的底子。</p></div>
-      <div class="tl"><div class="tl__yr">2025</div><div class="tl__t">东航客运大飞机座椅</div><p class="tl__d">校企合作项目，担任组长。与航空公司合作做乘客与出行场景需求分析。</p></div>
-      <div class="tl"><div class="tl__yr">2026 上半年</div><div class="tl__t">Emotion Sandbox</div><p class="tl__d">东风日产校企项目，产品经理（统筹）5 人跨职能团队。AI 开始进流程。</p></div>
-      <div class="tl"><div class="tl__yr">2026 下半年</div><div class="tl__t">AI 审计</div><p class="tl__d">产品经理。医院审计场景，定义 Agent 工作流编排，完成真实用户试用。</p></div>
-    </div>
-  </div>
-</section>
-
+<main id="top">
 <!-- ===================== 项目作品 ===================== -->
 <section class="section" id="work">
   <div class="wrap">
     <div class="rv">
       <div class="eyebrow">SELECTED WORK / 项目作品</div>
-      <h2 class="h2">五个项目，一条从用户需求走到可运行界面的线</h2>
+      <h1 class="h2">五个项目，一条从用户需求走到可运行界面的线</h1>
       <p class="lead">五个项目里 AI 参与的深度不一样 —— 有的从概念搭建就进来了，有的只承担渲染。每张卡片都写清「AI 用在哪几环」；业务问题、我的角色与完整推演，在各自的详情页里。</p>
       <div class="hintbar"><i></i><span>点任意卡片右下角的「查看详情」→ 打开该项目的独立详情页（/work/01-audit … 05），可单独分享链接</span></div>
     </div>
@@ -283,6 +171,121 @@
   </div>
 </section>
 
+<div class="personal-zone" id="profile" aria-labelledby="profileName">
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero__stage">
+    <!-- 静态底层：WebGL 不可用时它就是全部 -->
+    <img class="hero__base" src="assets/img/hero-field.jpg" alt="草原上停着的一架废弃运输机">
+    <canvas class="hero__canvas" id="revealCanvas"></canvas>
+    <div class="hero__tint"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__grade"></div>
+  </div>
+
+  <div class="hero__body" id="profileIntro">
+    <div class="hero__inner">
+      <div class="hero__eyebrow">AI Product &amp; Agent Design · Portfolio 2027</div>
+      <h2 class="hero__name" id="profileName">Jasmine.王南会</h2>
+      <p class="hero__claim">AI 不是我最后一步的画笔，<br>而是贯穿我设计流程每一段的合作者。</p>
+      <p class="hero__meta">2027 届 · 现居广州 · 开放 AI 产品 / Agent 设计方向实习</p>
+      <div class="hero__btns">
+        <a class="btn btn--solid" href="assets/resume/wangnanhui-resume-ai-pm-2027.pdf" download>下载简历</a>
+        <a class="btn btn--ghost" href="#work">看作品集</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <div class="wrap">
+      <!-- 音乐坞 · Shader Card -->
+      <div class="dock" id="dock">
+        <div class="dock__shader"><canvas></canvas></div>
+        <div class="dock__glow"></div>
+        <div class="dock__ui">
+          <div class="dock__bar">
+            <button class="dock__play" aria-label="播放">
+              <svg viewBox="0 0 14 14"><path d="M2 1.4 12.6 7 2 12.6z"/></svg>
+            </button>
+            <div class="dock__info">
+              <div class="dock__row">
+                <span class="dock__title">Head In The Clouds</span>
+                <span class="dock__artist">汉堡宝不许哭</span>
+              </div>
+              <div class="dock__bar-track"><div class="dock__bar-fill"></div></div>
+            </div>
+            <div class="dock__eq"><i></i><i></i><i></i><i></i></div>
+            <button class="dock__toggle" aria-label="展开">
+              <svg viewBox="0 0 12 12"><path d="M2 4.2 6 8 10 4.2"/></svg>
+            </button>
+          </div>
+          <div class="dock__panel">
+            <div>
+              <div class="dock__panel-in">
+                <div class="wave">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="dock__vol">
+                  <svg viewBox="0 0 14 14"><path d="M2 5h2.6L8 2.4v9.2L4.6 9H2z"/><path d="M10.4 4.6a3.6 3.6 0 0 1 0 4.8"/></svg>
+                  <div class="dock__vol-track"><div class="dock__vol-fill"></div></div>
+                  <span class="dock__vol-num">60</span>
+                </div>
+                <div class="dock__div"></div>
+                <div class="dock__plist">
+                  <div class="dock__track cur" data-i="0"><b>Head In The Clouds</b><time>3:04</time></div>
+                </div>
+                <!-- 音频放在 assets/audio/，曲目表见 site.js 的 TRACKS -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <audio id="dockAudio" preload="none" src="assets/audio/head-in-the-clouds.mp3"></audio>
+      </div>
+
+      <div class="scrollcue"><span>SCROLL</span><i></i></div>
+      <div class="hint-drag"><b>移动鼠标</b> · 推开覆盖在画面上的墨层</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 关于我 ===================== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about__row">
+      <div class="about__body rv">
+        <div class="eyebrow">About / 关于我</div>
+        <h2 class="h2">当造物不再稀缺，<br>判断力就是稀缺品</h2>
+        <p style="margin-top:26px">广东工业大学产品设计（电子信息方向），2027 届。</p>
+        <p>工业设计给我的第一课不是画得好看，而是顺序：先想清楚结构、人机尺寸和工程可行性，再落笔。多年过去，顺序没变，只是手里的工具一直在换。</p>
+        <p>那些关于未来的影像，曾经反复向我抛出同一个问题——当技术把「造物」的门槛压到接近于零，设计还剩下什么。我的答案是判断：形态可以被生成，方向必须有人认领。于是我把 AI 放进了自己的工作方式里，不是追赶潮流，而是回答那个问题。</p>
+        <p>设计之外，我在拍照，也在画画。镜头和画笔练的其实是同一件事：看见。光线、结构、情绪——都要求你在瞬间做出判断。</p>
+        <blockquote class="about__q">
+          <p>AI 负责可能性，我负责选择。</p>
+        </blockquote>
+        <dl class="about__facts">
+          <div class="about__fact"><dt>Education</dt><dd>广东工业大学 · 产品设计（电子信息方向）</dd></div>
+          <div class="about__fact"><dt>Direction</dt><dd>AI 产品经理 / Agent 设计</dd></div>
+          <div class="about__fact"><dt>Base</dt><dd>广州 · 每周可到岗 5 天</dd></div>
+          <div class="about__fact"><dt>Tools</dt><dd>Figma · Rhino · Blender · Midjourney / SD · Vizcom</dd></div>
+        </dl>
+      </div>
+      <figure class="about__photo rv">
+        <img src="assets/img/portrait.jpg" alt="Jasmine.王南会 肖像">
+        <figcaption>Jasmine.王南会 · 2026</figcaption>
+      </figure>
+    </div>
+
+    <div class="timeline rv">
+      <div class="tl"><div class="tl__yr">2023</div><div class="tl__t">入读产品设计</div><p class="tl__d">广东工业大学 · 产品设计（电子信息方向）。打结构、人机工学、工程可行性的底子。</p></div>
+      <div class="tl"><div class="tl__yr">2025</div><div class="tl__t">东航客运大飞机座椅</div><p class="tl__d">校企合作项目，担任组长。与航空公司合作做乘客与出行场景需求分析。</p></div>
+      <div class="tl"><div class="tl__yr">2026 上半年</div><div class="tl__t">Emotion Sandbox</div><p class="tl__d">东风日产校企项目，产品经理（统筹）5 人跨职能团队。AI 开始进流程。</p></div>
+      <div class="tl"><div class="tl__yr">2026 下半年</div><div class="tl__t">AI 审计</div><p class="tl__d">产品经理。医院审计场景，定义 Agent 工作流编排，完成真实用户试用。</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 联系 ===================== -->
 <section class="section" id="contact">
   <div class="wrap">
@@ -327,6 +330,8 @@
   </div>
 </section>
 
+</div>
+</main>
 <!-- ===================== 页脚 ===================== -->
 <footer class="footer">
   <div class="wrap">
@@ -339,7 +344,7 @@
         <div class="footer__col">
           <h4>导航</h4>
           <ul>
-            <li><a href="#about">关于我</a></li>
+            <li><a href="#profile">关于我</a></li>
             <li><a href="#work">项目作品</a></li>
             <li><a href="#photo">摄影与绘画</a></li>
           </ul>
